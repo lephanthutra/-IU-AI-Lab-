@@ -26,7 +26,7 @@ This lab has 5 problems to let you get familiar with Python.
 
 2. **Algorithm**:
 
-   The algorithm uses a queue data structure to store vertices that will be traversed in order of width priority.
+The algorithm uses a queue data structure to store vertices that will be traversed in order of width priority.
 
 **Step 1: Initialize***
 
@@ -56,15 +56,59 @@ This lab has 5 problems to let you get familiar with Python.
 
 - Insert the root node into the priority queue
 
-- Repeat while the queue is not empty:
-  
-  * Remove the element with the highest priority
+- Repeat while the queue is not empty: Remove the element with the highest priority
     
-    ***If*** the removed node is the destination, print total cost and stop the algorithm
+    * ***If*** the removed node is the destination, print total cost and stop the algorithm
 
-    ***Else***, enqueue all the children of the current node to the priority queue, with their cumulative cost from the root as priority
+    * ***Else***, enqueue all the children of the current node to the priority queue, with their cumulative cost from the root as priority
 
 
 ## A Star Search
+
+1. **Idea**: The basic idea of A* Search is to find the shortest path between an initial and a final point. It is an informed search algorithm, as it uses information about path cost and also uses heuristics to find the solution.
+
+2. **Algorithm**:
+
+- **Step 1: Initialize the open list**
+
+- **Step 2:Initialize the closed list**
+    put the starting node on the open 
+    list (you can leave its f at zero)
+
+- **Step 3: while the open list is not empty**
+    - find the node with the least f on 
+       the open list, call it "q"
+
+    - pop q off the open list
+  
+    - generate q's 8 successors and set their 
+       parents to q
+   
+    - for each successor
+        * if successor is the goal, stop search
+        
+        * else, compute both g and h for successor
+          successor.g = q.g + distance between 
+                              successor and q
+          successor.h = distance from goal to 
+          successor (This can be done using many 
+          ways, we will discuss three heuristics- 
+          Manhattan, Diagonal and Euclidean 
+          Heuristics)
+          
+          successor.f = successor.g + successor.h
+
+        * if a node with the same position as 
+            successor is in the OPEN list which has a 
+           lower f than successor, skip this successor
+
+        * if a node with the same position as 
+            successor  is in the CLOSED list which has
+            a lower f than successor, skip this successor
+            otherwise, add  the node to the open list
+     end (for loop)
+  
+    - push q on the closed list
+    end (while loop)
 
 
