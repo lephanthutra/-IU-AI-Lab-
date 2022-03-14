@@ -106,6 +106,7 @@ The algorithm uses a queue data structure to store vertices that will be travers
             successor  is in the CLOSED list which has
             a lower f than successor, skip this successor
             otherwise, add  the node to the open list
+            
      end (for loop)
   
     - push q on the closed list
