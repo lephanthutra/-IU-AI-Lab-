@@ -26,7 +26,7 @@ This lab has 5 problems to let you get familiar with Python.
 
 2. **Algorithm**:
 
-The algorithm uses a queue data structure to store vertices that will be traversed in order of width priority.
+   The algorithm uses a queue data structure to store vertices that will be traversed in order of width priority.
 
 **Step 1: Initialize***
 
